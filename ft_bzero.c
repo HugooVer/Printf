@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:05:13 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/25 21:52:52 by hvercell         ###   ########.fr       */
+/*   Created: 2023/01/25 21:57:00 by hvercell          #+#    #+#             */
+/*   Updated: 2023/01/25 21:57:19 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	ft_bzero(void *s, size_t n)
 {
-	return (1);
-}
-
-int	main(void)
-{
-	printf("eqw%qrw");
-	return (1);
+	ft_memset(s, '\0', n);
 }

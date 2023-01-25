@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:05:13 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/25 21:52:52 by hvercell         ###   ########.fr       */
+/*   Created: 2023/01/25 21:57:58 by hvercell          #+#    #+#             */
+/*   Updated: 2023/01/25 21:58:21 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	return (1);
-}
+	size_t	i;
 
-int	main(void)
-{
-	printf("eqw%qrw");
-	return (1);
+	i = 0;
+	while (n > i)
+	{
+		((unsigned char *)s)[n - i - 1] = (unsigned char)c;
+		++i;
+	}
+	return (s);
 }

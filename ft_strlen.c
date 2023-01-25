@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:05:13 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/25 21:52:52 by hvercell         ###   ########.fr       */
+/*   Created: 2023/01/25 21:35:10 by hvercell          #+#    #+#             */
+/*   Updated: 2023/01/25 21:35:52 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+size_t	ft_strlen(const char *s)
 {
-	return (1);
-}
+	size_t	len;
 
-int	main(void)
-{
-	printf("eqw%qrw");
-	return (1);
+	len = 0;
+	while (s[len] != '\0')
+		++len;
+	return (len);
 }
