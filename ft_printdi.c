@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   ft_printdi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 23:55:16 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 00:24:46 by hvercell         ###   ########.fr       */
+/*   Created: 2023/01/26 22:21:02 by hvercell          #+#    #+#             */
+/*   Updated: 2023/01/26 22:56:11 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+void	ft_printdi(int di)
 {
-	int	c = 4;
+	size_t	c;
+	size_t	nbr;
 
-	ft_printp (c);
-	printf(" = %p\n", &c);
+	nbr = di;
+	if (di < 0)
+	{
+		ft_printc('-');
+		nbr = -(long) di;
+	}
+	if (nbr < 10)
+	{
+		c = nbr % 10 + 48;
+		ft_printc(c);
+	}
+	else
+	{
+		ft_printdi(nbr / 10);
+		ft_printdi(nbr % 10);
+	}
 }

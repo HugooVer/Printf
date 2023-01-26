@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   ft_printp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 23:55:16 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 00:24:46 by hvercell         ###   ########.fr       */
+/*   Created: 2023/01/26 21:50:55 by hvercell          #+#    #+#             */
+/*   Updated: 2023/01/27 00:23:49 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+void	ft_printp(int p)
 {
-	int	c = 4;
+	char	*str;
 
-	ft_printp (c);
-	printf(" = %p\n", &c);
+	str = "0123456789abcdef";
+	if (p > 0)
+	{
+		ft_printp(p / 16);
+		write(1, &str[p % 16], 1);
+	}
 }

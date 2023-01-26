@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:00:53 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/26 21:02:19 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/27 00:22:20 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,13 @@
 # include <unistd.h>
 
 int		ft_printf(const char *format, ...);
+void	ft_printc(char c);
+void	ft_prints(char *s);
+void	ft_printp(int p);
+void	ft_printdi(int n);
+void	ft_printu(unsigned int u);
+void	ft_printx(unsigned int x);
+void	ft_printX(unsigned int X);
 
+size_t	ft_strlen(char *s);
 #endif

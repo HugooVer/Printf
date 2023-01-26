@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   ft_prints.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 23:55:16 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 00:24:46 by hvercell         ###   ########.fr       */
+/*   Created: 2023/01/26 21:26:51 by hvercell          #+#    #+#             */
+/*   Updated: 2023/01/26 21:48:52 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+void	ft_prints(char *s)
 {
-	int	c = 4;
-
-	ft_printp (c);
-	printf(" = %p\n", &c);
+	write(1, s, ft_strlen(s) * sizeof(char));
 }

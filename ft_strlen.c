@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 23:55:16 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 00:24:46 by hvercell         ###   ########.fr       */
+/*   Created: 2023/01/26 21:29:41 by hvercell          #+#    #+#             */
+/*   Updated: 2023/01/26 21:36:20 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include"ft_printf.h"
 
-int	main()
+size_t	ft_strlen(char *s)
 {
-	int	c = 4;
+	size_t	len;
 
-	ft_printp (c);
-	printf(" = %p\n", &c);
+	len = 0;
+	while (s[len] != '\0')
+	{
+		++len;
+	}
+	return (len);
 }
