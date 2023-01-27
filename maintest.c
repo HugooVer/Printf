@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 23:55:16 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 00:24:46 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/27 17:10:46 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main()
 {
-	int	c = 4;
+	int	c = -1;
 
-	ft_printp (c);
-	printf(" = %p\n", &c);
+	ft_printu (c);
+	printf(" = %u\n", c);
 }
