@@ -6,13 +6,17 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 21:22:31 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/26 21:48:23 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/27 23:52:52 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printc(char c)
+int	ft_printc(char c)
 {
-	write(1, &c, sizeof(char));
+	int	len;
+
+	len = sizeof(char);
+	write(1, &c, len);
+	return (len);
 }
