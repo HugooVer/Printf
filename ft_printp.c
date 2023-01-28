@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 21:50:55 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/28 16:30:57 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:36:07 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ int	ft_digit_countd(size_t p)
 int	ft_printp(size_t p)
 {
 	if (p == 0)
-	{
-		ft_prints("(nil)");
-		return (5);
-	}
+		return (ft_prints("(nil)"));
 	ft_prints("0x");
 	ft_put_hex(p);
 	return (2 + ft_digit_countd(p));

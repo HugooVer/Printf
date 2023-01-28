@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:00:53 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 23:52:28 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 21:27:25 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
 int		ft_printc(char c);
 int		ft_prints(char *s);

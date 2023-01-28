@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 22:21:02 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/28 16:30:19 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:46:36 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_digit_countdi(int p)
 
 	len = 0;
 	pp = p;
+	if (p == 0)
+		return (len = 1, len);
 	if (p < 0)
 	{
 		++len;

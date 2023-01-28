@@ -6,17 +6,19 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 22:29:29 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/28 16:31:08 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:45:42 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_digit_countu(size_t p)
+int	ft_digit_countu(unsigned int p)
 {
 	int	len;
 
 	len = 0;
+	if (p == 0)
+		return (len = 1, len);
 	while (p > 0)
 	{
 		p = p / 10;

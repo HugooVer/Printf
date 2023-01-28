@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 23:06:11 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/28 16:31:16 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:54:50 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_digit_countx(size_t p)
 	int	len;
 
 	len = 0;
+	if (p == 0)
+		return (len = 1, len);
 	while (p > 0)
 	{
 		p = p / 16;
@@ -25,17 +27,22 @@ int	ft_digit_countx(size_t p)
 	return (len);
 }
 
-int	ft_printx(unsigned int x)
+void	ft_put_hexx(size_t x)
 {
-	char			*str;
-	unsigned int	xx;
+	char	*str;
 
-	xx = x;
 	str = "0123456789abcdef";
 	if (x > 0)
 	{
-		ft_printx(x / 16);
+		ft_put_hexx(x / 16);
 		write(1, &str[x % 16], 1);
 	}
-	return (ft_digit_countx(xx));
+}
+
+int	ft_printx(unsigned int x)
+{
+	if (x == 0)
+		return (ft_printdi(0));
+	ft_put_hexx(x);
+	return (ft_digit_countx(x));
 }

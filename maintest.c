@@ -6,16 +6,21 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 23:55:16 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/28 16:52:01 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 18:42:03 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main()
+int	main(void)
 {
-	//int	c = -1;
+	int	c;
+	int	f;
+	int	ft_f;
 
-	//ft_printu (c);
-	ft_printf("_=_%%__%q\n");
+	c = 0;
+	f = printf("%i\n", c);
+	ft_f = ft_printf("%i\n", c);
+	printf("Exepted:	%i	return:	%i\n", c, f);
+	ft_printf("Got:		%i	return:	%i\n", c, ft_f);
 }

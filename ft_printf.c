@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:05:13 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/28 16:51:54 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 21:18:22 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	ft_print_good_formart(char c, va_list value)
 	int	len;
 
 	len = 0;
-	if (c == 'c' || c == '%')
+	if (c == 'c')
 		len = ft_printc(va_arg(value, int));
 	else if (c == 's')
 		len = ft_prints(va_arg(value, char *));
 	else if (c == 'p')
-		len = ft_printp(va_arg(value, unsigned int));
+		len = ft_printp(va_arg(value, size_t));
 	else if (c == 'd' || c == 'i')
 		len = ft_printdi(va_arg(value, int));
 	else if (c == 'u')
@@ -31,6 +31,8 @@ int	ft_print_good_formart(char c, va_list value)
 		len = ft_printx(va_arg(value, unsigned int));
 	else if (c == 'X')
 		len = ft_printx_(va_arg(value, unsigned int));
+	else if (c == '%')
+		len = ft_printc('%');
 	return (len);
 }
 
@@ -45,7 +47,8 @@ int	ft_printf(const char *format, ...)
 	len = 0;
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && ft_memchr("cspdiuxX%", format[i + 1], 9) != NULL)
+		if (format[i] == '%'
+			&& ft_memchr("cspdiuxX%", format[i + 1], 9) != NULL)
 		{
 			len += ft_print_good_formart(format[i + 1], args);
 			++i;
