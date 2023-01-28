@@ -6,31 +6,31 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:05:13 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 23:51:06 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:51:54 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_good_formart(char c, void *value)
+int	ft_print_good_formart(char c, va_list value)
 {
 	int	len;
 
 	len = 0;
-	if (c == 'c')
-		len = ft_printc(value);
+	if (c == 'c' || c == '%')
+		len = ft_printc(va_arg(value, int));
 	else if (c == 's')
-		len = ft_prints((char *)value);
+		len = ft_prints(va_arg(value, char *));
 	else if (c == 'p')
-		len = ft_printp(value);
+		len = ft_printp(va_arg(value, unsigned int));
 	else if (c == 'd' || c == 'i')
-		len = ft_printdi((int)value);
+		len = ft_printdi(va_arg(value, int));
 	else if (c == 'u')
-		len = ft_printu((unsigned int)value);
+		len = ft_printu(va_arg(value, unsigned int));
 	else if (c == 'x')
-		len = ft_printx((unsigned int)value);
+		len = ft_printx(va_arg(value, unsigned int));
 	else if (c == 'X')
-		len = ft_printx_((unsigned int)value);
+		len = ft_printx_(va_arg(value, unsigned int));
 	return (len);
 }
 
@@ -38,7 +38,6 @@ int	ft_printf(const char *format, ...)
 {	
 	int			i;
 	int			len;
-	const char	flags = "cspdiuxX";
 	va_list		args;
 
 	va_start(args, format);
@@ -46,9 +45,9 @@ int	ft_printf(const char *format, ...)
 	len = 0;
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%' && ft_memchr((const void *)flags, format[i + 1], 8) != NULL)
+		if (format[i] == '%' && ft_memchr("cspdiuxX%", format[i + 1], 9) != NULL)
 		{
-			len += ft_print_good_formart(format[i + 1], va_arg(args, void *));
+			len += ft_print_good_formart(format[i + 1], args);
 			++i;
 		}
 		else

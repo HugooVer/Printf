@@ -6,13 +6,13 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 23:06:11 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 21:56:41 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:31:16 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_digit_count(size_t p)
+int	ft_digit_countx(size_t p)
 {
 	int	len;
 
@@ -37,5 +37,5 @@ int	ft_printx(unsigned int x)
 		ft_printx(x / 16);
 		write(1, &str[x % 16], 1);
 	}
-	return (ft_digit_count(xx));
+	return (ft_digit_countx(xx));
 }

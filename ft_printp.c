@@ -6,7 +6,7 @@
 /*   By: hvercell <hvercell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 21:50:55 by hvercell          #+#    #+#             */
-/*   Updated: 2023/01/27 21:56:21 by hvercell         ###   ########.fr       */
+/*   Updated: 2023/01/28 16:30:57 by hvercell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_put_hex(size_t x)
 	}
 }
 
-int	ft_digit_count(size_t p)
+int	ft_digit_countd(size_t p)
 {
 	int	len;
 
@@ -46,5 +46,5 @@ int	ft_printp(size_t p)
 	}
 	ft_prints("0x");
 	ft_put_hex(p);
-	return (2 + ft_digit_count(p));
+	return (2 + ft_digit_countd(p));
 }
