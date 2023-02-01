@@ -1,3 +1,5 @@
+NAME = libftprintf.a
+
 CC = cc
 CFLAGS += -Wall 
 CFLAGS += -Wextra 
@@ -18,8 +20,6 @@ SRCS += ft_printX.c
 SRCS += ft_strlen.c
 
 OBJS = ${SRCS:.c=.o}
-
-NAME = libftprintf.a
 
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
